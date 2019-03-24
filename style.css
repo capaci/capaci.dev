@@ -50,7 +50,8 @@ a:active {
 }
 
 .social__item {
-    display: inline;
+    display: inline-block;
+    margin-bottom: .7em;
 }
 
 .social__item:not(:last-child) {
