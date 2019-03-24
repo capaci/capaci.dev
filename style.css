@@ -9,6 +9,7 @@ a:visited,
 a:active {
     color: #b5b5b7;
     text-decoration: none;
+    transition: all .3s ease-in;
 }
 
 .wrapper {
@@ -54,4 +55,8 @@ a:active {
 
 .social__item:not(:last-child) {
     margin-right: .7em;
+}
+
+.social__item:hover a {
+    color: #efe;
 }
