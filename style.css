@@ -58,6 +58,11 @@ a:active {
     margin-right: .7em;
 }
 
+a:hover,
 .social__item:hover a {
     color: #efe;
+}
+
+h2 {
+    font-size: 1.2rem;
 }
