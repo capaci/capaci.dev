@@ -1,27 +1,48 @@
 import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SOCIAL_NETWORKS } from '../lib/constants'
+
+
 
 const Footer = () => {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
+        <div className="row justify-between items-center py-10">
+          <div className="mb-8 text-center lg:mb-0 lg:text-left">
+            <a className="navbar-brand inline-block text-2xl" href="/">
+              capaci.dev
             </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+          </div>
+          <div className="mb-8 text-center lg:mb-0">
+            <ul>
+              <li className="m-3 inline-block">
+                <a href="/about/">About</a>
+              </li>
+              <li className="m-3 inline-block">
+                <a href="/elements/">Elements</a>
+              </li>
+              <li className="m-3 inline-block">
+                <a href="/privacy-policy/">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div className="mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right row">
+            <ul className="social-icons">
+              {SOCIAL_NETWORKS.map((network, idx) => (
+                <li key={network.name} className={`inline ${idx === 0 ? ' ml-0' : 'ml-4'}`}>
+                  <a href={network.href} aria-label={network.name} target="_blank" rel="nofollow noopener noreferrer" >
+                    <FontAwesomeIcon icon={network.icon} size="2xl" style={{ color: "#ff890f", }} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="border-border dark:border-darkmode-border border-t py-7">
+          <div className="text-light dark:text-darkmode-light container text-center">
+            <p>Designed &amp; Developed by <a href="https://zeon.studio" target="_blank">Rafael Capaci</a> based on <a href="https://next-blog-starter.vercel.app/" target="_blank" rel="noreferrer noopener nofollow">Next.js blog starter kit</a> and <a href="https://hugoplate.netlify.app/" target="_blank" rel="noreferrer noopener nofollow">Hugoplate</a>
+            </p>
           </div>
         </div>
       </Container>

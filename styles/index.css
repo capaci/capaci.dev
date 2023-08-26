@@ -1,3 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* * {
+  font-size: 18px;
+} */
+:root {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 0;
+}
+.logo {
+    /* color: #11111f; */
+    color: #ff890f;
+    /* background-color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    font: 1000 60px Arial;
+    font-size: 60px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px;
+}
+.header {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+.navbar {
+    position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+
+.section-sm {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+.row {
+	--bs-gutter-x: 2rem;
+	--bs-gutter-y: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: calc(var(--bs-gutter-y) * -1);
+	margin-right: calc(var(--bs-gutter-x)/-2);
+	margin-left: calc(var(--bs-gutter-x)/-2);
+}
+
+
+/* TEXT */
+h1,
+.h1 {
+    font-size:2.44140625rem
+}
+@media(min-width:768px) {
+    h1,
+    .h1 {
+        font-size:3.0517578125rem
+    }
+}
+h2,
+.h2 {
+    font-size:1.953125rem
+}
+@media(min-width:768px) {
+    h2,
+    .h2 {
+        font-size:2.44140625rem
+    }
+}
+h3,
+.h3 {
+    font-size:1.5625rem
+}
+@media(min-width:768px) {
+    h3,
+    .h3 {
+        font-size:1.953125rem
+    }
+}
+h4,
+.h4 {
+    font-size:1.5625rem;
+    font-weight:500
+}
+h5,
+.h5 {
+    font-size:1.25rem;
+    font-weight:500
+}
+h6,
+.h6 {
+    font-size:1rem;
+    font-weight:500
+}
+strong {
+    font-weight:600
+}
+code::after {
+    content:var(--tw-content);
+    border-style:none
+}
+blockquote>p {
+    margin-top:0!important;
+    margin-bottom:0!important
+}

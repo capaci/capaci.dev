@@ -1,4 +1,4 @@
-import Alert from './alert'
+import Menu from './menu'
 import Footer from './footer'
 import Meta from './meta'
 
@@ -11,11 +11,11 @@ const Layout = ({ preview, children }: Props) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
-        <Alert preview={preview} />
-        <main>{children}</main>
+      <div className="flex flex-col justify-between min-h-screen">
+        <Menu preview={preview} />
+        <main className='flex-auto min-h-64'>{children}</main>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }
