@@ -33,7 +33,7 @@ export default function Index({ allPosts }: Props) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories title="More Stories" posts={morePosts} />}
         </Container>
       </Layout>
     </>

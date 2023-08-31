@@ -10,6 +10,7 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import type PostType from '../../interfaces/post'
+import TagsList from '../../components/tags-list'
 
 type Props = {
   post: PostType
@@ -25,13 +26,13 @@ export default function Post({ post, morePosts, preview }: Props) {
   }
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <Container className="pt-20">
+        {/* <Header /> */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 text-xl leading-8 max-w-5xl mx-auto">
               <Head>
                 <title>{title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
@@ -40,9 +41,12 @@ export default function Post({ post, morePosts, preview }: Props) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
+                tags={post.tags}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.content}/>
+              <TagsList tags={post.tags} className="border-t-2 mt-8 pt-4"/>
+
             </article>
           </>
         )}
@@ -63,6 +67,7 @@ export async function getStaticProps({ params }: Params) {
     'date',
     'slug',
     'author',
+    'tags',
     'content',
     'ogImage',
     'coverImage',
