@@ -1,49 +1,19 @@
 ---
-title: 'Dynamic Routing and Static Generation'
+title: 'Preview Mode for Static Generation'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+coverImage: '/assets/blog/preview/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
-  name: JJ Kasper
-  picture: '/assets/blog/authors/jj.jpeg'
+  name: Joe Haddad
+  picture: '/assets/blog/authors/joe.jpeg'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: '/assets/blog/preview/cover.jpg'
+tags:
+  - Python
+  - Django
+  - GraphQL
+  - Talks
 ---
-
-::youtube[Video of a cat in a box]{#01ab2cd3efg}
-
-<gist user="capaci" id="669f96c93e90fb7eef98ca865cd5fbf3" description="asdf"/>
-
-
-```jsx
-import { useRouter } from 'next/router'
-
-const DynamicRouting = () => {
-  const router = useRouter()
-  return (
-    <>
-      <h1>Dynamic Routing</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </>
-  )
-}
-```
-
-
-```py
-from xablau import xablito
-
-
-result = xablito.say_hey('Hello World!')
-
-assert result == "And I say hey, hey, hey! What's going on?"
-
-```
-
-
-<script src="https://gist.github.com/BenjaminAbt/ee4f77b9c5f3068506dd0d43df57f8f8.js"></script>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
