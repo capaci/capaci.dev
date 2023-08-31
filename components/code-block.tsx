@@ -3,24 +3,32 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 
 type Props = {
-    className: string,
-    children?: React.ReactNode,
-  }
-  
-  const CodeBlock = ({ className, children}: Props) => {
-    const language = className.replace('lang-', '')
+  className: string,
+  children?: React.ReactNode,
+  block?: boolean
+}
 
-    return (
-      <div style={{ position: 'relative' }}>
-        <CopyToClipboard content={String(children)} />
-        <SyntaxHighlighter
-          children={String(children).replace(/\n$/, '')}
-          language={language}
-          PreTag="div"
-        />
-      </div>
-    )
+const CodeBlock = ({ className, children, block, ...props }: Props) => {
+  const language = className?.replace('lang-', '')
+  if (!block) {
+    return <code
+      className="code-inline"
+    >
+      {children}
+    </code >
   }
-  
-  export default CodeBlock
-  
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <CopyToClipboard content={String(children)} />
+      <SyntaxHighlighter
+        children={String(children).replace(/\n$/, '')}
+        showLineNumbers
+        language={language}
+        PreTag="div"
+      />
+    </div>
+  )
+}
+
+export default CodeBlock

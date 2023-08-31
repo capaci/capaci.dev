@@ -13,7 +13,7 @@ const Layout = ({ preview, children }: Props) => {
       <Meta />
       <div className="flex flex-col justify-between min-h-screen">
         <Menu preview={preview} />
-        <main className='flex-auto min-h-64'>{children}</main>
+        <main className='flex-auto min-h-64 pt-20'>{children}</main>
         <Footer />
       </div>
     </>

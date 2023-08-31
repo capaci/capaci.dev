@@ -11,8 +11,8 @@
 }
 
 .logo {
-    /* color: #11111f; */
     color: #ff890f;
+    /* color: #b25b00; */
     /* background-color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -131,4 +131,13 @@ code::after {
 blockquote>p {
     margin-top: 0 !important;
     margin-bottom: 0 !important
+}
+
+
+.code-inline {
+    color: #9f0808;
+    background: rgb(245, 242, 240);
+    text-shadow: white 0px 1px;
+    font-family: Consolas, Monaco, " Andale Mono", "Ubuntu Mono", monospace;
+    padding: 0.2em 0.4em;
 }

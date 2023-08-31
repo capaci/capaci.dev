@@ -28,6 +28,7 @@ const CopyToClipboard = ({ content }: Props) => {
         'border-green-800 text-green-800': isCopied,
         'border-gray-500 text-gray-500': !isCopied,
       })}
+      aria-label={isCopied ? 'Copied!' : 'Copy'}
       onClick={handleClick}
     >
       <FontAwesomeIcon
