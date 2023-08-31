@@ -1,4 +1,4 @@
-// import markdownStyles from './markdown-styles.module.css'
+import markdownStyles from './markdown-styles.module.css'
 import Markdown from 'markdown-to-jsx'
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -11,17 +11,16 @@ type Props = {
 
 const PostBody = ({ content }: Props) => {
   return (
-    <div className="max-w-2xl mx-auto">
-      <Markdown
-        options={{
-          overrides: {
-            code: CodeBlock,
-          }
-        }}
-      >
-        {content}
-      </Markdown>
-    </div>
+    <Markdown
+      className={markdownStyles['markdown']}
+      options={{
+        overrides: {
+          code: CodeBlock,
+        }
+      }}
+    >
+      {content}
+    </Markdown>
   )
 }
 
