@@ -15,7 +15,7 @@ const PostBody = ({ content }: Props) => {
     <Markdown
       className={markdownStyles['markdown']}
       options={{
-        createElement(type, props, children) {
+        createElement(type, props, children: any) {  // TODO: fix typing
           if (type === 'pre') {
             return <pre>
               {React.createElement(CodeBlock, { block: true, ...children.props })}

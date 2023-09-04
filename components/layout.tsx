@@ -20,6 +20,8 @@ const Layout = ({ preview, showMenu=true, showFooter=true, children }: Props) =>
   return (
     <>
       <Meta />
+      {/* workaround to use all themes */}
+      <span className='frappe latte'></span>  
       <div className={cn(
         "flex flex-col justify-between min-h-screen bg-base text-text",
         THEME_CSS_CLASSES[theme])

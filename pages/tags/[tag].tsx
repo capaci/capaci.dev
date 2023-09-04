@@ -71,11 +71,11 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   const posts = getAllPosts(['tags'])
   const allTags = posts.reduce(
-    (tags, post) => post.tags ? [...post.tags, ...tags] : tags
+    (tags: string[], post) => post.tags ? [...post.tags, ...tags] : tags
     , []
   )
   return {
-    paths: allTags.map((tag) => {
+    paths: allTags.map(tag => {
       return {
         params: {
           tag
