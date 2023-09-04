@@ -1,28 +1,28 @@
-import Container from './container'
-import cn from 'classnames'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { useContext } from "react";
+import { ThemeContext } from "../lib/contexts";
+import { faMoon, faToggleOff, faToggleOn } from "@fortawesome/free-solid-svg-icons";
+import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { faLightbulb as faLightbulbSolid } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb as faLightbulbRegular } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 type Props = {
   preview?: boolean
 }
 
-
-
 const Menu = ({ preview }: Props) => {
-  const previewCSSClasses = cn('header sticky top-0 z-30 border-b', {
-    'bg-neutral-800 border-neutral-800 text-white': preview,
-    'bg-neutral-50 border-neutral-200': !preview,
-  })
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <header className={previewCSSClasses}>
+    <header className="header sticky top-0 z-30 border-b border-overlay0 bg-mantle">
       <nav className="navbar container">
-        <div className="order-0">
+        {/* <div className="order-0"> */}
           <a className="navbar-brand block" href="/">
-            <span className="logo">capaci.dev</span>
+            <span className="logo text-peach">capaci.dev</span>
             {/* <img fetchPriority="high" decoding="async" className="img logo-dark" width="160" height="32" src="/images/logo_hud3822dc52499c854acb9b180fed4f736_3648_320x0_resize_q90_h2_lanczos_3.webp" alt="Hugoplate" /> */}
           </a>
-        </div>
+        {/* </div> */}
         {/* MOBILE NAV */}
         {/* <input id="nav-toggle" type="checkbox" className="hidden" /> */}
         {/* <label htmlFor="nav-toggle" className="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"> */}
@@ -37,17 +37,34 @@ const Menu = ({ preview }: Props) => {
               </polygon>
             </svg> */}
         {/* </label> */}
-        <ul id="nav-menu" className="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
-          <li className="nav-item">
+        <ul id="nav-menu" className="navbar-nav order-3 hidden lg:flex w-full text-xl pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 items-center">
+          {/* <li className="nav-item">
             <a className="nav-link active" href="/">Home</a>
-          </li>
+          </li> */}
           <li className="nav-item">
             <a className="nav-link" href="/blog/">Blog</a>
           </li>
           <li className="nav-item">
+            <a className="nav-link" href="/talks/">Talks</a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="/about/">Sobre</a>
           </li>
-          <li className="nav-item nav-dropdown group relative">
+          <li className="nav-item">
+
+            <button className="nav-link" onClick={toggleTheme}>
+              {/* {`Tema ${theme}`} */}
+              {/* <FontAwesomeIcon icon={theme == 'light' ? faSun : faMoon} size="lg" aria-label="Switch theme" className="text-yellow"/> */}
+              <FontAwesomeIcon
+                // icon={theme == 'light' ? faLightbulbSolid : faLightbulbRegular}
+                icon={theme == 'light' ? faToggleOn : faToggleOff}
+                size="lg"
+                aria-label="Switch theme"
+                className='text-yellow'
+              />
+            </button>
+          </li>
+          {/* <li className="nav-item nav-dropdown group relative">
             <span className="nav-link inline-flex items-center">Pages
               <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
@@ -71,7 +88,7 @@ const Menu = ({ preview }: Props) => {
                 <a className="nav-dropdown-link" href="/contact/">Contact</a>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li className="mt-4 inline-block lg:hidden">
             <a className="btn btn-outline-primary btn-sm" href="/contact">get a quote</a>
           </li>
@@ -81,7 +98,7 @@ const Menu = ({ preview }: Props) => {
             <i className="fa-solid fa-search">
             </i>
           </button> */}
-          {/* <div className="theme-switcher mr-5">
+        {/* <div className="theme-switcher mr-5">
               <input id="theme-switcher" data-theme-switcher="" type="checkbox" />
                 <label htmlFor="theme-switcher">
                   <span className="sr-only">theme switcher</span>
@@ -97,8 +114,8 @@ const Menu = ({ preview }: Props) => {
                   </span>
                 </label>
             </div> */}
-          {/* <script>var darkMode=!0,themeSwitch;localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode&&document.documentElement.classList.toggle("dark"),themeSwitch=document.querySelectorAll("[data-theme-switcher]"),document.addEventListener("DOMContentLoaded",()=>{[].forEach.call(themeSwitch, function (e) { e.checked = !!darkMode, e.addEventListener("click", () => { document.documentElement.classList.toggle("dark"), localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light") }) })})</script> */}
-          {/* <a href="/contact" className="btn btn-outline-primary btn-sm hidden lg:inline-block">get a quote</a> */}
+        {/* <script>var darkMode=!0,themeSwitch;localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode&&document.documentElement.classList.toggle("dark"),themeSwitch=document.querySelectorAll("[data-theme-switcher]"),document.addEventListener("DOMContentLoaded",()=>{[].forEach.call(themeSwitch, function (e) { e.checked = !!darkMode, e.addEventListener("click", () => { document.documentElement.classList.toggle("dark"), localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light") }) })})</script> */}
+        {/* <a href="/contact" className="btn btn-outline-primary btn-sm hidden lg:inline-block">get a quote</a> */}
         {/* </div> */}
       </nav>
       {/* <Container> */}

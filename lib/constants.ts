@@ -31,3 +31,8 @@ export const SOCIAL_NETWORKS = [
     href: 'https://t.me/capaci',
   }
 ]
+
+export const THEME_CSS_CLASSES = {
+  light: 'latte',
+  dark: 'frappe',
+}
