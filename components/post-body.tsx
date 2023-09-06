@@ -1,7 +1,6 @@
 import Markdown from 'markdown-to-jsx'
 import React from 'react'
 import markdownStyles from './markdown-styles.module.css'
-// import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import CodeBlock from './code-block'
 

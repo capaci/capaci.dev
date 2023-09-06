@@ -4,12 +4,13 @@ import matter from 'gray-matter'
 
 type Items = {
   [key: string]: any
+  tags?: string[] 
 }
 
 
 const postsDirectory = join(process.cwd(), '_posts')
 
-export function getPostSlugs() {
+export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory)
 }
 
@@ -23,8 +24,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, files)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
-
 
   const items: Items = {}
 
@@ -54,11 +53,10 @@ export function getPostsByTag(tag: string, fields: string[] = []) {
   return posts.filter((post) => post.tags?.includes(tag))
 }
 
-export function getAllPosts(fields: string[] = []) {
+export function getAllPosts(fields: string[] = []): Items[] {
   const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  return posts
+  return slugs
+      .map((slug) => getPostBySlug(slug, fields))
+      // sort posts by date in descending order
+      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }

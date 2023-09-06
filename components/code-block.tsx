@@ -1,6 +1,6 @@
 import CopyToClipboard from "./copy-to-clipboard"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 type Props = {
   className: string,
@@ -26,6 +26,7 @@ const CodeBlock = ({ className, children, block, ...props }: Props) => {
         showLineNumbers
         language={language}
         PreTag="div"
+        style={oneDark}
       />
     </div>
   )

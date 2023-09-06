@@ -22,7 +22,7 @@ export default function Index({ allPosts }: Props) {
           <title>{`Rafael Capaci ${CMS_NAME}`}</title>
         </Head>
         <Container>
-          <Intro />
+          {/* <Intro /> */}
           {heroPost && (
             <HeroPost
               title={heroPost.title}

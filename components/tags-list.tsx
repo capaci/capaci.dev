@@ -19,7 +19,7 @@ const TagsList = ({ tags, className }: Props) => {
             as={`/tags/${tag}`}
             href="/tags/[tag]"
             aria-label={tag}
-            className="rounded-full px-6 py-2 bg-neutral-100 hover:bg-neutral-200 mr-4 "
+            className="rounded-full px-6 py-3 bg-blue text-base font-bold mr-4"
           >
             {`#${tag}`}
           </Link>

@@ -25,15 +25,18 @@ const CopyToClipboard = ({ content }: Props) => {
   return (
     <button
       className={cn('absolute flex place-content-center top-0 right-0 z-10 m-2 border-solid border-2 rounded-lg', {
-        'border-green-800 text-green-800': isCopied,
-        'border-gray-500 text-gray-500': !isCopied,
+        'border-green text-green': isCopied,
+        'border-base text-base': !isCopied,
       })}
       aria-label={isCopied ? 'Copied!' : 'Copy'}
       onClick={handleClick}
     >
       <FontAwesomeIcon
         icon={isCopied ? faCheck : faCopy}
-        className="relative center my-[8px] mx-[9px]"
+        className={cn('relative center', {
+          'my-[9px] mx-[10px]': !isCopied,
+          'my-[8px] mx-[9px]': isCopied,
+        })}
       />
     </button>
   )
