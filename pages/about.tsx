@@ -32,7 +32,6 @@ export default function Index({ allPosts }: Props) {
                   <div
                     className="
                       content
-                      text-base
                       md:text-lg
                       lg:text-xl
                       text-center

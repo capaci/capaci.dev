@@ -11,7 +11,7 @@
 }
 
 .logo {
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-weight: 1000;
     font-size: 60px;
     -webkit-text-fill-color: transparent;
@@ -131,9 +131,26 @@ blockquote>p {
 
 
 .code-inline {
-    color: #9f0808;
-    background: rgb(245, 242, 240);
-    text-shadow: white 0px 1px;
-    font-family: Consolas, Monaco, " Andale Mono", "Ubuntu Mono", monospace;
-    padding: 0.2em 0.4em;
+    background: rgb(40, 44, 52);
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 1px;
+    /* font-family: Consolas, Monaco, " Andale Mono", "Ubuntu Mono", monospace; */
+    font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    padding: 0.15em 0.4em;
+    color: rgb(171, 178, 191);
+
+
+    
+    /* color: white; */
+    /* direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal; */
+    /* word-break: normal; */
+    /* line-height: 1.5; */
+}
+
+
+a:hover {
+    text-decoration: none;
+    opacity: 0.85;
 }
