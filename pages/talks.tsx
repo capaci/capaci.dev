@@ -1,12 +1,12 @@
+import Head from 'next/head'
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import MoreStories from '../components/more-stories'
 import Post from '../interfaces/post'
+import { getAllPosts } from '../lib/api'
+import { CMS_NAME } from '../lib/constants'
 import FEATURE_FLAGS from '../lib/feature-flags'
 
 
@@ -14,7 +14,8 @@ type Props = {
   allPosts: Post[]
 }
 
-export default function Blog({ allPosts }: Props) {
+
+export default function Talks({ allPosts }: Props) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
@@ -24,7 +25,7 @@ export default function Blog({ allPosts }: Props) {
           <title>{`Rafael Capaci ${CMS_NAME}`}</title>
         </Head>
         <Container>
-          {/* <Intro /> */}
+          <Intro />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -35,12 +36,13 @@ export default function Blog({ allPosts }: Props) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories title="More Stories" posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories title="Talks" posts={morePosts} />}
         </Container>
       </Layout>
     </>
   )
 }
+
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([

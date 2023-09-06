@@ -11,6 +11,8 @@ import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import type PostType from '../../interfaces/post'
 import TagsList from '../../components/tags-list'
+import FEATURE_FLAGS from '../../lib/feature-flags'
+
 
 type Props = {
   post: PostType

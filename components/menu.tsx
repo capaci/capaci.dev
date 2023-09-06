@@ -1,11 +1,8 @@
+import { faToggleOff, faToggleOn } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { ThemeContext } from "../lib/contexts";
-import { faMoon, faToggleOff, faToggleOn } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-regular-svg-icons";
-import { faLightbulb as faLightbulbSolid } from "@fortawesome/free-solid-svg-icons";
-import { faLightbulb as faLightbulbRegular } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import FEATURE_FLAGS from "../lib/feature-flags";
 
 type Props = {
   preview?: boolean
@@ -18,10 +15,10 @@ const Menu = ({ preview }: Props) => {
     <header className="header static top-0 z-30">
       <nav className="navbar container">
         {/* <div className="order-0"> */}
-          <a className="navbar-brand block" href="/">
-            <span className="logo text-yellow">capaci.dev</span>
-            {/* <img fetchPriority="high" decoding="async" className="img logo-dark" width="160" height="32" src="/images/logo_hud3822dc52499c854acb9b180fed4f736_3648_320x0_resize_q90_h2_lanczos_3.webp" alt="Hugoplate" /> */}
-          </a>
+        <a className="navbar-brand block" href="/">
+          <span className="logo text-yellow">capaci.dev</span>
+          {/* <img fetchPriority="high" decoding="async" className="img logo-dark" width="160" height="32" src="/images/logo_hud3822dc52499c854acb9b180fed4f736_3648_320x0_resize_q90_h2_lanczos_3.webp" alt="Hugoplate" /> */}
+        </a>
         {/* </div> */}
         {/* MOBILE NAV */}
         {/* <input id="nav-toggle" type="checkbox" className="hidden" /> */}
@@ -41,15 +38,26 @@ const Menu = ({ preview }: Props) => {
           {/* <li className="nav-item">
             <a className="nav-link active" href="/">Home</a>
           </li> */}
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/blog/">Blog</a>
-          </li> */}
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/talks/">Talks</a>
-          </li> */}
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/about/">Sobre</a>
-          </li> */}
+          {FEATURE_FLAGS.BLOG &&
+            <li className="nav-item">
+              <a className="nav-link" href="/blog/">Blog</a>
+            </li>
+          }
+          {FEATURE_FLAGS.TALKS &&
+            <li className="nav-item">
+              <a className="nav-link" href="/talks/">Talks</a>
+            </li>
+          }
+          {FEATURE_FLAGS.PORTFOLIO &&
+            <li className="nav-item">
+              <a className="nav-link" href="/talks/">Portfolio</a>
+            </li>
+          }
+          {FEATURE_FLAGS.ABOUT &&
+            <li className="nav-item">
+              <a className="nav-link" href="/about/">Sobre</a>
+            </li>
+          }
           <li className="nav-item">
 
             <button className="nav-link" onClick={toggleTheme}>

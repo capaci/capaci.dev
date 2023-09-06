@@ -11,6 +11,8 @@ import type PostType from '../../interfaces/post'
 import { getAllPosts, getPostsByTag } from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
 
+import FEATURE_FLAGS from '../../lib/feature-flags'
+
 type Props = {
   posts: PostType[]
   tag?: string
